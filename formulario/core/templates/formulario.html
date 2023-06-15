@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de presença</title>
+</head>
+<body><center>
+    <h1><center>Formulário de presença</center></h1>
+    <div>
+        <h2>Preencha seu nome e escolha seu professor para registrar sua presença</h2>
+    </div>
+   <div>
+    <form method="post">
+    {% csrf_token %}
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome"><br><br>
+    
+    <label for="professor">Professor:</label>
+  <select id="professor" name="professor" required>
+    <option value="" selected disabled>Selecione um professor</option>
+    {% for professor in professores %}
+      <option value="{{ professor }}">{{ professor }}</option>
+    {% endfor %}
+  </select>
+  
+    <input type="submit" value="Enviar">
+  </form>
+  </div>
+</center></body>
+
+<style>
+    h1,h2, label {
+        font-family: Arial, sans-serif;
+    }
+
+</style>
+
+</html>
+
+
+
+  

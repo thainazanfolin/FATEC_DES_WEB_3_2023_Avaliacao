@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Presença</title>
+</head>
+
+<body>
+    <div><center>
+        <h1>Lista de presença</h1>
+    <table>
+        <thead>
+          <tr>
+            <th>Nome do Aluno</th>
+            <th>Professor</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for cadastro in cadastros %}
+            <tr>
+              <td>{{ cadastro.nome }}</td>
+              <td>{{ cadastro.professor }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div></center> 
+</body>
+
+<style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: Arial, sans-serif;
+    }
+  
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+  
+    th {
+      background-color: #f2f2f2;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  
+    tr:hover {
+      background-color: #e6e6e6;
+    }
+  
+    td {
+      border-bottom: 1px solid #ddd;
+    }
+
+    h1 {
+        font-family: Arial, sans-serif;
+    }
+  </style>
+
+</html>
